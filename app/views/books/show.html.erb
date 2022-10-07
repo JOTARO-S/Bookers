@@ -1,12 +1,8 @@
-<div>
-    <%= flash[:notice] %>
-</div>
+<h2>Title</h2>
+<p><%= @books.title %></p>
 
-<h2>タイトル</h2>
-<p><%= @list.title %></p>
+<h2>Body</h2>
+<p><%= @books.body %></p>
 
-<h2>本文</h2>
-<p><%= @list.body %></p>
-
-<%= link_to "編集", edit_list_path(@list.id) %>
-<%= link_to "戻る", list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<span><%= link_to "Edit", edit_book_path(@books.id) %></span>
+<span><%= link_to "Back", books_path %></span>
