@@ -9,9 +9,13 @@ class BooksController < ApplicationController
   end
   
   def create
-    books = Book.new(books_params)
-    books.save
-    redirect_to book_path(books.id)
+    book = Book.new(books_params)
+    if book.save
+      flash[:notice] = "ブックが正常に作成されました。"
+      redirect_to book_path(book.id)
+    else
+      render :index
+    end
   end
   
   def show
@@ -22,15 +26,18 @@ class BooksController < ApplicationController
     @books = Book.find(params[:id])
   end
   
-  def update
-    books = Book.find(params[:id])
-    books.update(books_params)
-    redirect_to book_path(books.id)
+  def update #設定
+    book = Book.find(params[:id])
+    if book.update(books_params)
+    redirect_to book_path(book.id)
+    else
+      render :edit
+    end
   end
   
   def destroy
-    @books = Book.find(params[:id])
-    books.destroy
+    book = Book.find(params[:id])
+    book.destroy
     redirect_to '/books'
   end
   

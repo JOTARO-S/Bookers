@@ -1,26 +1,33 @@
 <h1>Books</h1>
-<div class="books-content">
-  <p>Title</p>
-  <p>Body</p>
-</div>
+
   
-<div class ="books-wrap">  
+    <div class="books-content">
+      <p>Title</p>
+      <p>Body</p>
+    </div>
   <% @books.each do |books| %>
     <div class="books-content">
       <span><%= books.title %></span>
       <span><%= books.body %></span>
-      
+      <div class="books-content">
+        <span><%= link_to "Show", book_path(books.id) %></span>
+        <span><%= link_to "Edit", edit_book_path(books.id) %></span>
+        <span><%= link_to "Destroy", book_path(books.id), method: :delete, "data-confirm" => "Are you sure?" %></span>
+      </div>
     <% end %>
 </div>
 
 
 
 <h2>New book</h2>
+
+
+  
 <%= form_with model: @book do |f| %>
-  <h4>Title</h4>
+  <p>Title</p>
   <%= f.text_field :title %>
   
-  <h4>Body</h4>
+  <p>Body</p>
   <%= f.text_area :body %>
   
   <%= f.submit 'Create Book' %>
