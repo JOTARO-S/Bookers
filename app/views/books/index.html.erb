@@ -1,34 +1,55 @@
-<h1>Books</h1>
+<!DOCTYPE html>
+<html>
+  <body>
 
+  <h1>Books</h1>
+
+   
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
   
-    <div class="books-content">
-      <p>Title</p>
-      <p>Body</p>
-    </div>
-  <% @books.each do |books| %>
-    <div class="books-content">
-      <span><%= books.title %></span>
-      <span><%= books.body %></span>
-      <div class="books-content">
-        <span><%= link_to "Show", book_path(books.id) %></span>
-        <span><%= link_to "Edit", edit_book_path(books.id) %></span>
-        <span><%= link_to "Destroy", book_path(books.id), method: :delete, "data-confirm" => "Are you sure?" %></span>
+    
+    <tbody>
+      <% @books.each do |books| %>
+        <tr>
+          <td><span class="books-text"><%= books.title %></span></td>
+          <td><span class="books-text"><%= books.body %></span></td>
+          <td><span class="main-link"><%= link_to "Show", book_path(books.id) %></span></td>
+          <td><span class="main-link"><%= link_to "Edit", edit_book_path(books.id) %></span></td>
+          <td><span class="main-link"><%= link_to "Destroy", book_path(books.id), method: :delete, "data-confirm" => "Are you sure?" %></span></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    
+  
+  <h2>New book</h2>
+
+
+  <form class="new_book" id="new_book"> 
+    <%= form_with model: @book do |f| %>
+      <div class="field">
+        <label for="book_title">Title</label>
+        <span><%= f.text_field :title %></span>
+      </div>
+      
+      <div class="field">
+        <label for="book_body">Body</label>
+        <span><%= f.text_area :body %></span>
+      </div>
+  
+      <div class="action">
+        <span><%= f.submit 'Create Book' %></span>
       </div>
     <% end %>
-</div>
-
-
-
-<h2>New book</h2>
-
-
+  </form>
   
-<%= form_with model: @book do |f| %>
-  <p>Title</p>
-  <%= f.text_field :title %>
+  </body>
+</html>
   
-  <p>Body</p>
-  <%= f.text_area :body %>
-  
-  <%= f.submit 'Create Book' %>
-<% end %>

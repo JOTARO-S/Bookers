@@ -30,11 +30,6 @@ body {
 p {
   line-height: 18px;
   margin: 33px;
-  
-}
-
-span {
-  margin: 33px;
 }
 
 a {
@@ -45,11 +40,36 @@ a:visited {
   color: #666;
 }
 
+div {
+  display: block;
+}
+
+#notice {
+  color: green;
+}
+
 .top-title {
   font-size: 2em;
+}
 
+.books-link {
+  margin: 33px;
 }
 
 .books-content {
   display: flex;
+  margin: 33px;
+}
+
+.books-text {
+  margin: 20px;
+}
+
+
+.main-link {
+  margin: 0 0 0 10px;
+}
+
+div .field {
+  margin-bottom: 10px;
 }
