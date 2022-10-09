@@ -8,22 +8,22 @@
       <%= form_with model: @books, url: book_path(@books.id), method: :patch do |f| %>
       <div class="field">
         <label for="book_title">Title</label>
-        <span class="book_title"><%= f.text_field :title %></span>
+        <%= f.text_field :title %>
       </div>
   
       <div class="field">
         <label for="book_body">Body</label>
-        <span class="book_body"><%= f.text_area :body %></span>
+        <%= f.text_area :body %>
       </div>
   
-      <div class="action">
-        <span><%= f.submit 'Update Book' %></span>
+      <div class="actions">
+        <%= f.submit 'Update Book' %>
       </div>
       <% end %>
   
     </form>
-      <span><%= link_to "Show", book_path(@books.id) %></span>
+      <%= link_to "Show", book_path(@books.id) %>
        | 
-      <span><%= link_to "Back", books_path %></span>
+      <%= link_to "Back", books_path %>
   </body>
 </html>

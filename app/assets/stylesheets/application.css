@@ -15,19 +15,36 @@
  */
 
 /* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
-  margin: 33px;
+  background-color: #fff;
+  color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
 }
 
-p {
+h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-block: 0.67em 0.67em;
+  margin-inline: 0;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-block: 0.83em 0.83em;
+  margin-inline: 0;
+  
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
   line-height: 18px;
   margin: 33px;
 }
@@ -44,32 +61,65 @@ div {
   display: block;
 }
 
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+th {
+  padding-bottom: 5px;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: center; /*-initial-center*/
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+label {
+  display: block;
+  cursor: default;
+}
+
 #notice {
   color: green;
 }
 
-.top-title {
-  font-size: 2em;
+.field {
+  margin-bottom: 10px;
 }
 
-.books-link {
-  margin: 33px;
-}
-
-.books-content {
-  display: flex;
-  margin: 33px;
-}
-
-.books-text {
-  margin: 20px;
-}
-
-
-.main-link {
-  margin: 0 0 0 10px;
-}
-
-div .field {
+.actions {
   margin-bottom: 10px;
 }
